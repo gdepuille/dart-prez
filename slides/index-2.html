@@ -47,16 +47,12 @@
 					<div>
 						<br>
 					</div>
-					<h2>Le langage et autres sucreries</h2>
-					<div>
-						<br>
-					</div>
 					<div>presenté par</div>
 					<div>Gregory DEPUILLE</div>
 					<div>
 						<br>
 					</div>
-					<div>présentation en temps réel sur :</div>
+					<div>Présentation temps réel sur :</div>
 					<div>
 						<br>
 					</div>
@@ -73,21 +69,21 @@
                         A l'origine de sa création, un constat simple. Le JavaScript
                         est le "bytecode" du Web, mais le langage JavaScript pose un
                         certain nombre de problème :<br><br>
-                        <p class="fragment highlight-current-blue">typage dynamique</p>
-                        <p class="fragment highlight-current-blue">prototypé</p>
-                        <p class="fragment highlight-current-blue">implémentation différente dans les browsers</p>
+                        <p class="fragment fade-in">typage dynamique</p>
+                        <p class="fragment fade-in">prototypé</p>
+                        <p class="fragment fade-in">implémentation différente dans les browsers</p>
 
                     </div>
-                    <div>
-                        <br>
-                    </div>
-                    <div>
-                        Présenté en Octobre 2011 pour la première fois.
-                    </div>
+
+                    <aside class="notes">
+                        Et oui le JS c'est de la merde.
+                    </aside>
 				</section>
 
                 <section>
-                    <h2>Comment ça marche ?</h2>
+                    <section>
+                        <h2>Comment ça marche ?</h2>
+                    </section>
 
                     <section>
                         <h2>Architecture</h2>
@@ -103,10 +99,21 @@
                 </section>
 
                 <section>
-                    <h2>Comment ça se code ?</h2>
+                    <section>
+                        <h2>Comment ça se code ?</h2>
+                    </section>
 
                     <section>
                         <h2>Les types</h2>
+                        <pre>
+                            <code data-trim>
+                            (def lazy-fib
+                            (concat
+                            [0 1]
+                            ((fn rfib [a b]
+                            (lazy-cons (+ a b) (rfib b (+ a b)))) 0 1)))
+                            </code>
+                        </pre>
                     </section>
 
                     <section>
@@ -115,6 +122,22 @@
 
                     <section>
                         <h2>Classes / Interfaces</h2>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Focus</h2>
+
+                        <p>
+                            <img src="img/logo_angular_plus_dart.png" />
+                            <br>
+                            <a href="https://angulardart.org/" target="_blank">AngularDART</a>
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Hello World</h2>
                     </section>
                 </section>
 			</div>
@@ -128,17 +151,18 @@
 			// Full list of configuration options available here:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
-				controls: true,
+				controls: false,
 				progress: true,
 				history: true,
 				center: true,
+                previewLinks: true,
 
 				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
 				transition: Reveal.getQueryHash().transition || 'zoom', // default/cube/page/concave/zoom/linear/fade/none
 
 				// Parallax scrolling
-				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
-				// parallaxBackgroundSize: '2100px 900px',
+				parallaxBackgroundImage: 'img/3d-space_bfadfb1b.jpg',
+				parallaxBackgroundSize: '1600px 1200px',
 
 				// Optional libraries used to extend on reveal.js
 				dependencies: [
@@ -147,7 +171,8 @@
 					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
 			});
 

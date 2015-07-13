@@ -1,12 +1,5 @@
 /* global module:false */
 module.exports = function(grunt) {
-
-    // Load grunt tasks automatically
-    require('load-grunt-tasks')(grunt);
-
-    // Time how long tasks take. Can help when optimizing build times
-    require('time-grunt')(grunt);
-
 	var port = grunt.option('port') || 8000;
 	var base = grunt.option('base') || '.';
 
@@ -140,6 +133,17 @@ module.exports = function(grunt) {
 		}
 
 	});
+
+	// Dependencies
+	grunt.loadNpmTasks( 'grunt-contrib-qunit' );
+	grunt.loadNpmTasks( 'grunt-contrib-jshint' );
+	grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
+	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
+	grunt.loadNpmTasks( 'grunt-contrib-watch' );
+	grunt.loadNpmTasks( 'grunt-sass' );
+	grunt.loadNpmTasks( 'grunt-contrib-connect' );
+	grunt.loadNpmTasks( 'grunt-autoprefixer' );
+	grunt.loadNpmTasks( 'grunt-zip' );
 
 	// Default task
 	grunt.registerTask( 'default', [ 'css', 'js' ] );
